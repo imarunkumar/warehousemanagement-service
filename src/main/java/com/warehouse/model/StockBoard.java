@@ -7,8 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="StockBoard")
 public class StockBoard {
 	 	
+		@Id
+		private String stockId;
+		
 	    private String id;
-	 	
+	    private String stockName;
+	    private String location;
+	    private int avaliable;
+	    private int booked;
+	    private float price;
 	    public String getId() {
 			return id;
 		}
@@ -34,11 +41,17 @@ public class StockBoard {
 		public void setLocation(String location) {
 			this.location = location;
 		}
-		public int getAmount() {
-			return amount;
+		public int getAvaliable() {
+			return avaliable;
 		}
-		public void setAmount(int amount) {
-			this.amount = amount;
+		public void setAvaliable(int avaliable) {
+			this.avaliable = avaliable;
+		}
+		public int getBooked() {
+			return booked;
+		}
+		public void setBooked(int booked) {
+			this.booked = booked;
 		}
 		public float getPrice() {
 			return price;
@@ -47,12 +60,7 @@ public class StockBoard {
 			this.price = price;
 		}
 		
-		private String stockName;
-		@Id
-		private String stockId;
-	    private String location;
-	    private int amount;
-	    private float price;
+		
 
 		
 }
